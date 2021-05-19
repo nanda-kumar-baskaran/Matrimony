@@ -1,4 +1,4 @@
-package com.globallogic.matrimony.dao.address;
+package com.globallogic.matrimony.dao.location;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,8 +7,15 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "Location")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Location {
 
 	@Id
@@ -24,10 +31,6 @@ public class Location {
 	@Enumerated(EnumType.STRING)
 	CITIZENSHIP citizenship;
 
-	public Location() {
-
-	}
-
 	public enum CITY {
 		CHENNAI, VELLORE, COIMBATORE, HYDERABAD, COCHIN
 	}
@@ -38,38 +41,6 @@ public class Location {
 
 	public enum CITIZENSHIP {
 		INDIAN, SRILANKAN, AMERICAN
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public CITY getCity() {
-		return city;
-	}
-
-	public void setCity(CITY city) {
-		this.city = city;
-	}
-
-	public STATE getState() {
-		return state;
-	}
-
-	public void setState(STATE state) {
-		this.state = state;
-	}
-
-	public CITIZENSHIP getCitizenship() {
-		return citizenship;
-	}
-
-	public void setCitizenship(CITIZENSHIP citizenship) {
-		this.citizenship = citizenship;
 	}
 
 	public Location(Long id, CITY city, STATE state, CITIZENSHIP citizenship) {

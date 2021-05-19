@@ -4,18 +4,18 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class UserDetails {
 
 	@Id
@@ -27,10 +27,13 @@ public class UserDetails {
 	Integer age;
 
 	Integer heightInCms;
+	@Enumerated(EnumType.STRING)
 	MARITAL_STATUS maritalStatus;
 	Integer weight;
 	Integer salary;
+	@Enumerated(EnumType.STRING)
 	EATING_HABITS eatingHabits;
+	@Enumerated(EnumType.STRING)
 	MOTHER_TONGUE motherTongue;
 
 	public enum MARITAL_STATUS {
